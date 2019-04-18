@@ -5,6 +5,7 @@ import Message from './js/navigator/tab/Message'
 import Contact from './js/navigator/tab/Contact'
 import Find from './js/navigator/tab/Find'
 import My from './js/navigator/tab/My'
+import AddFriend from './js/pages/add_friend'
 const Tabs = {
     Message: {
         screen: Message,
@@ -77,6 +78,7 @@ const styles = StyleSheet.create({
 const HomeStack = createStackNavigator(
     {
         BottomTabs,
+        AddFriend
     }, {
         defaultNavigationOptions: {
             header: null

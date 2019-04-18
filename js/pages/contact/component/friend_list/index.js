@@ -70,7 +70,7 @@ export default class FriendList extends Component {
                 this[`text${flagAlphabet}`].setNativeProps({ style: { color: '#666' } })
             }
             this[`header${alphabet}`].setNativeProps({ style: { backgroundColor: '#fff' } })
-            this[`text${alphabet}`].setNativeProps({ style: { color: '#1AAD19' } })
+            this[`text${alphabet}`].setNativeProps({ style: { color: '#1AAD19', fontWeight: '500' } })
             flagAlphabet = alphabet
         }
 
