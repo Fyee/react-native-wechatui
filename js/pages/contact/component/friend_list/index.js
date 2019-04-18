@@ -1,21 +1,24 @@
 import React, { Component } from 'react'
-import { View, Text, SectionList, StyleSheet, Image, PixelRatio, DeviceEventEmitter } from 'react-native'
+import { View, Text, SectionList, StyleSheet, Image, PixelRatio, } from 'react-native'
 import { ListItem } from 'react-native-elements'
 import ListHeader from './component/list_header'
 import FriendListData from '../../../../data/FriendListData'
 import Alphabet from './component/alphabet'
+import _ from 'lodash'
 const ITEM_HEIGHT = 60
+let flagAlphabet = ''
 export default class FriendList extends Component {
     constructor(props) {
         super(props)
         this.initState()
         this.calculationAlphabetHeight = this.calculationAlphabetHeight.bind(this)
+        this.getAlphabetWithScrollY = this.getAlphabetWithScrollY.bind(this)
     }
     initState() {
         this.state = {
             data: [],
             alphabet: [],
-            alphabetHeigthMap: {}
+            alphabetHeigthMap: {},
         }
     }
     _getListItem = ({ item }) => {
@@ -46,31 +49,39 @@ export default class FriendList extends Component {
         )
     }
     _handleScroll = (event) => {
-        // this[`headerA`].measure((fx, fy, width, height, px, py) => {
-        //     if (py <= 88 && py >= 58) {
-        //         this[`headerA`].setNativeProps({ style: { backgroundColor: '#fff' } })
-        //         this[`textA`].setNativeProps({ style: { color: '#1AAD19' } })
-        //     } else {
-        //         this[`headerA`].setNativeProps({ style: { backgroundColor: '#f1f1f1' } })
-        //         this[`textA`].setNativeProps({ style: { color: '#666' } })
-        //     }
-        // })
         //1.初始第一个字母距离屏幕header为290
         let offset = 290
         //2.获取滚动的距离
         let scrollY = event.nativeEvent.contentOffset.y
-        console.log(this.state.alphabetHeigthMap)
+        let alphabet = this.getAlphabetWithScrollY(scrollY)
+        if (scrollY < 290) {
+            this[`headerA`].setNativeProps({ style: { backgroundColor: '#f1f1f1' } })
+            this[`textA`].setNativeProps({ style: { color: '#666' } })
+            this.refs.handerAlphabetMethod.renderAlphabetStyle(-1, 0)
+        }
+        if (alphabet !== undefined) {
+            let newIndex = _.findIndex(this.state.alphabet, (item) => { return item === alphabet })
+            let oldIndex = _.findIndex(this.state.alphabet, (item) => { return item === flagAlphabet })
+            console.log(oldIndex)
+            this.refs.handerAlphabetMethod.renderAlphabetStyle(newIndex, oldIndex)
+            if (flagAlphabet !== '' && flagAlphabet !== alphabet) {
+                this[`header${flagAlphabet}`].setNativeProps({ style: { backgroundColor: '#f1f1f1' } })
+                this[`text${flagAlphabet}`].setNativeProps({ style: { color: '#666' } })
+            }
+            this[`header${alphabet}`].setNativeProps({ style: { backgroundColor: '#fff' } })
+            this[`text${alphabet}`].setNativeProps({ style: { color: '#1AAD19' } })
+            flagAlphabet = alphabet
+        }
+
 
     }
     //定义一个方法在componentDidMount时计算好每个字母对应屏幕区间的高度，再定义个方法，通过传入高度获取到对应的字母，从而最小化循环次数
     calculationAlphabetHeight(alphabet, data) {
-        console.log(alphabet)
         let alphabetHeigthMap = new Map()
         //1.初始第一个字母距离屏幕header为290
         let offset = 290
         let sum = 0;
         alphabet.map((item, index) => {
-            console.log(item)
             //2.获取每个分组的高度
             let sectionHeight = data[index].data.length * ITEM_HEIGHT + 30 //每个分组的Item*ITEM_HEIGHT+title的高度
             sum += sectionHeight
@@ -80,6 +91,13 @@ export default class FriendList extends Component {
         this.setState({
             alphabetHeigthMap
         })
+    }
+    getAlphabetWithScrollY(scrollY) {
+        for (let [key, value] of this.state.alphabetHeigthMap.entries()) {
+            if (scrollY >= 290 && scrollY <= value) {
+                return key;
+            }
+        }
     }
     _line = () => {
         return (
@@ -122,7 +140,7 @@ export default class FriendList extends Component {
                         { length: ITEM_HEIGHT, offset: ITEM_HEIGHT * index + 30, index }
                     )}
                 />
-                <Alphabet handlerClick={this._scrollToIndex} alphabet={this.state.alphabet} />
+                <Alphabet handlerClick={this._scrollToIndex} alphabet={this.state.alphabet} ref="handerAlphabetMethod" />
             </View>
         )
     }
@@ -147,6 +165,9 @@ const styles = StyleSheet.create({
         height: 30,
         backgroundColor: '#F1F1F1',
         justifyContent: "center",
+        borderTopWidth: 1 / PixelRatio.get(),
+        borderBottomWidth: 1 / PixelRatio.get(),
+        borderColor: '#f1f1f1'
     },
     sectionHeaderText: {
         fontSize: 13,

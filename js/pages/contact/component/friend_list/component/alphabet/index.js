@@ -39,12 +39,12 @@ export default class Alphabet extends Component {
                 if (index >= 0 && index < alphabetLength) {
                     if (index != compareIndex) {
                         this.props.handlerClick(index)
-                        if (compareIndex !== -1) {
-                            this[`item-${compareIndex}`].setNativeProps({ style: { backgroundColor: 'transparent' } });
-                            this[`text-${compareIndex}`].setNativeProps({ style: { color: '#333' } });
-                        }
-                        this[`item-${index}`].setNativeProps({ style: { backgroundColor: '#1AAD19' } });
-                        this[`text-${index}`].setNativeProps({ style: { color: '#fff' } });
+                        // if (compareIndex !== -1) {
+                        //     this[`item-${compareIndex}`].setNativeProps({ style: { backgroundColor: 'transparent' } });
+                        //     this[`text-${compareIndex}`].setNativeProps({ style: { color: '#333' } });
+                        // }
+                        // this[`item-${index}`].setNativeProps({ style: { backgroundColor: '#1AAD19' } });
+                        // this[`text-${index}`].setNativeProps({ style: { color: '#fff' } });
                         this.setState({
                             selectAlphabet: this.props.alphabet[index]
                         })
@@ -63,12 +63,12 @@ export default class Alphabet extends Component {
                 if (index >= 0 && index < alphabetLength) {
                     if (index != compareIndex) {
                         this.props.handlerClick(index)
-                        if (compareIndex !== -1) {
-                            this[`item-${compareIndex}`].setNativeProps({ style: { backgroundColor: 'transparent' } });
-                            this[`text-${compareIndex}`].setNativeProps({ style: { color: '#333' } });
-                        }
-                        this[`item-${index}`].setNativeProps({ style: { backgroundColor: '#1AAD19' } });
-                        this[`text-${index}`].setNativeProps({ style: { color: '#fff' } });
+                        // if (compareIndex !== -1) {
+                        //     this[`item-${compareIndex}`].setNativeProps({ style: { backgroundColor: 'transparent' } });
+                        //     this[`text-${compareIndex}`].setNativeProps({ style: { color: '#333' } });
+                        // }
+                        // this[`item-${index}`].setNativeProps({ style: { backgroundColor: '#1AAD19' } });
+                        // this[`text-${index}`].setNativeProps({ style: { color: '#fff' } });
                         this.setState({
                             selectAlphabet: this.props.alphabet[index]
                         })
@@ -98,6 +98,17 @@ export default class Alphabet extends Component {
                 return true;
             },
         });
+    }
+    renderAlphabetStyle(newIndex, oldIndex) {
+        if (oldIndex >= 0) {
+            this[`item-${oldIndex}`].setNativeProps({ style: { backgroundColor: 'transparent' } });
+            this[`text-${oldIndex}`].setNativeProps({ style: { color: '#333' } });
+        }
+        if (newIndex >= 0) {
+            this[`item-${newIndex}`].setNativeProps({ style: { backgroundColor: '#1AAD19' } });
+            this[`text-${newIndex}`].setNativeProps({ style: { color: '#fff' } });
+        }
+
     }
     render() {
         return (
