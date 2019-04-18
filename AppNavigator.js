@@ -64,7 +64,7 @@ const BottomTabs = createBottomTabNavigator(Tabs, {
         style: { backgroundColor: '#F1F1F1', height: 50, justifyContent: 'center', paddingBottom: 5 },
         labelStyle: {
             fontSize: 10,
-            fontWeight: '200'
+            fontWeight: '400'
         }
     }
 })

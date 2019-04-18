@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { View, Text, SectionList, StyleSheet, Image, PixelRatio, } from 'react-native'
 import { ListItem } from 'react-native-elements'
-import ListHeader from './component/list_header'
+import Search from './Search'
+import FeatureList from './FeatureList'
 import FriendListData from '../../../../data/FriendListData'
-import Alphabet from './component/alphabet'
+import Alphabet from './Alphabet'
 import _ from 'lodash'
 const ITEM_HEIGHT = 60
 let flagAlphabet = ''
@@ -127,7 +128,12 @@ export default class FriendList extends Component {
         return (
             <View style={{ flex: 1 }}>
                 <SectionList
-                    ListHeaderComponent={<ListHeader />}
+                    ListHeaderComponent={
+                        <View>
+                            <Search />
+                            <FeatureList />
+                        </View>
+                    }
                     sections={this.state.data}
                     renderItem={this._getListItem}
                     keyExtractor={(item, index) => item + index}

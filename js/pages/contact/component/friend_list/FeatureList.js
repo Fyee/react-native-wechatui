@@ -8,7 +8,7 @@ export default FeatureList = (props) => {
                 leftAvatar={
                     <View style={{ ...styles.iconWrapper, backgroundColor: '#ffb228' }}>
                         <Image
-                            source={require('../../../../../../../../assets/icon/pages/common/new_friend.png')}
+                            source={require('../../../../assets/icon/pages/common/new_friend.png')}
                             style={styles.icon}
                         />
                     </View>
@@ -22,7 +22,7 @@ export default FeatureList = (props) => {
                 leftAvatar={
                     <View style={{ ...styles.iconWrapper, backgroundColor: '#1AAD19' }}>
                         <Image
-                            source={require('../../../../../../../../assets/icon/pages/common/group.png')}
+                            source={require('../../../../assets/icon/pages/common/group.png')}
                             style={styles.icon}
                         />
                     </View>
@@ -36,7 +36,7 @@ export default FeatureList = (props) => {
                 leftAvatar={
                     <View style={{ ...styles.iconWrapper, backgroundColor: '#2782D7' }}>
                         <Image
-                            source={require('../../../../../../../../assets/icon/pages/common/label.png')}
+                            source={require('../../../../assets/icon/pages/common/label.png')}
                             style={styles.icon}
                         />
                     </View>
@@ -50,7 +50,7 @@ export default FeatureList = (props) => {
                 leftAvatar={
                     <View style={{ ...styles.iconWrapper, backgroundColor: '#2782D7' }}>
                         <Image
-                            source={require('../../../../../../../../assets/icon/pages/common/public.png')}
+                            source={require('../../../../assets/icon/pages/common/public.png')}
                             style={styles.icon}
                         />
                     </View>
