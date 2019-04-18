@@ -1,10 +1,10 @@
 import React from 'react'
 import { Image, StyleSheet } from 'react-native'
 import { createBottomTabNavigator, createStackNavigator, } from 'react-navigation'
-import Message from './js/navigator/Message'
-import Contact from './js/navigator/Contact'
-import Find from './js/navigator/Find'
-import My from './js/navigator/My'
+import Message from './js/navigator/tab/Message'
+import Contact from './js/navigator/tab/Contact'
+import Find from './js/navigator/tab/Find'
+import My from './js/navigator/tab/My'
 const Tabs = {
     Message: {
         screen: Message,

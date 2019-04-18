@@ -6,7 +6,7 @@ export default Search = (props) => {
             <TouchableWithoutFeedback>
                 <View style={styles.search}>
                     <Image
-                        source={require('../../../../assets/icon/pages/common/search.png')}
+                        source={require('../../../../../../../../assets/icon/pages/common/search.png')}
                         style={styles.icon}
                     />
                     <Text style={styles.text}>搜索</Text>
