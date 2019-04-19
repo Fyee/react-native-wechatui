@@ -1,11 +1,10 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import MyScreen from '../../pages/my'
 export default My = (props) => {
     return (
-        <View
-            style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
-        >
-            <Text>My</Text>
-        </View>
+        <MyScreen
+            navigation={props.navigation}
+        />
     )
 }

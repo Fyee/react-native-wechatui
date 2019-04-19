@@ -39,7 +39,7 @@ export default class AddFriend extends React.Component {
                 <ScrollView>
                     <Search />
                     <View style={styles.myWechatWrapper}>
-                        <Text style={styles.myWechatText}>我的微信号：yejunbo</Text>
+                        <Text style={styles.myWechatText}>我的微信号：ye1234567897</Text>
                         <TouchableOpacity
                             onPress={() => {
                                 this.setState({

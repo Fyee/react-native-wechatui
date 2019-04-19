@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Image, StyleSheet, PixelRatio } from 'react-native'
 import { ListItem } from 'react-native-elements'
+import ListLine from '../../../../component/line/ListLine'
 export default FeatureList = (props) => {
     return (
         <View>
@@ -25,7 +26,7 @@ export default FeatureList = (props) => {
                 }
                 containerStyle={styles.container}
             />
-            <View style={styles.line} />
+            <ListLine />
             <ListItem
                 leftAvatar={
                     <View style={{ ...styles.iconWrapper, backgroundColor: '#1AAD19' }}>
@@ -47,7 +48,7 @@ export default FeatureList = (props) => {
                 }
                 containerStyle={styles.container}
             />
-            <View style={styles.line} />
+            <ListLine />
             <ListItem
                 leftAvatar={
                     <View style={{ ...styles.iconWrapper, backgroundColor: '#2782D7' }}>
@@ -69,7 +70,7 @@ export default FeatureList = (props) => {
                 }
                 containerStyle={styles.container}
             />
-            <View style={styles.line} />
+            <ListLine />
             <ListItem
                 leftAvatar={
                     <View style={{ ...styles.iconWrapper, backgroundColor: '#1AAD19' }}>
@@ -91,7 +92,7 @@ export default FeatureList = (props) => {
                 }
                 containerStyle={styles.container}
             />
-            <View style={styles.line} />
+            <ListLine />
             <ListItem
                 leftAvatar={
                     <View style={{ ...styles.iconWrapper, backgroundColor: '#2782D7' }}>
@@ -113,7 +114,7 @@ export default FeatureList = (props) => {
                 }
                 containerStyle={styles.container}
             />
-            <View style={styles.line} />
+            <ListLine />
             <ListItem
                 leftAvatar={
                     <View style={{ ...styles.iconWrapper, backgroundColor: '#2782D7' }}>
@@ -170,6 +171,6 @@ const styles = StyleSheet.create({
     line: {
         height: 1 / PixelRatio.get(),
         backgroundColor: '#f1f1f1',
-        marginLeft: 70
+        marginLeft: 50
     }
 })
