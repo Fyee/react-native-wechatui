@@ -168,15 +168,15 @@ const styles = StyleSheet.create({
         tintColor: '#333'
     },
     headerLeftIcon: {
-        width: 55,
-        height: 55,
+        width: 60,
+        height: 60,
         borderRadius: 5
     },
     headerTitle: {
-        fontSize: 16, color: '#111', fontWeight: '600'
+        fontSize: 17, color: '#111', fontWeight: '600'
     },
     headerSubTitle: {
-        fontSize: 12, color: '#666', marginTop: 10
+        fontSize: 16, color: '#666', marginTop: 10
     },
     headerRightIcon: {
         width: 15, height: 15, tintColor: '#666'
