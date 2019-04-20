@@ -43,6 +43,9 @@ export default MyScreen = (props) => {
                         />
                     }
                     containerStyle={styles.headerContainer}
+                    onPress={() => {
+                        props.navigation.navigate('MyInfo')
+                    }}
                 />
                 <SplitLine />
                 <ListItem
@@ -60,6 +63,9 @@ export default MyScreen = (props) => {
                             style={styles.rightIcon}
                         />
                     }
+                    onPress={() => {
+                        props.navigation.navigate('Pay')
+                    }}
                 />
                 <SplitLine />
                 <ListItem

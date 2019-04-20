@@ -11,9 +11,9 @@ const styles = StyleSheet.create({
     line: {
         borderTopWidth: 1 / PixelRatio.get(),
         borderBottomWidth: 1 / PixelRatio.get(),
-        borderTopColor: '#f1f1f1',
-        borderBottomColor: '#f1f1f1',
-        backgroundColor: '#f2f2f2',
+        borderTopColor: '#e4e4e4',
+        borderBottomColor: '#e4e4e4',
+        backgroundColor: 'transparent',
         height: 10,
     }
 })

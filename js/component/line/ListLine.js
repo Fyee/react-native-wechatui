@@ -10,7 +10,7 @@ export default ListLine = (props) => {
 const styles = StyleSheet.create({
     line: {
         height: 1 / PixelRatio.get(),
-        backgroundColor: '#f1f1f1',
+        backgroundColor: '#e4e4e4',
         marginLeft: 50
     }
 })
