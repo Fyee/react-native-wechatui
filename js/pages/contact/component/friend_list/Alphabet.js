@@ -11,6 +11,7 @@ export default class Alphabet extends Component {
         }
     }
     getStartHeight = () => {
+
         //计算 字母表的整体高度 20为每个字母view的height
         const alphabetHeight = this.props.alphabet.length * AlphaHeight
         //计算字母表开始的字母,距离屏幕顶部的距离
