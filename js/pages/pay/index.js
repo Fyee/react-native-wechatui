@@ -14,6 +14,7 @@ import {
 import MyHeader from '../../component/header'
 import GlobalStyles from '../../utils/GlobalStyles'
 import Panel from './component/panel'
+import TencentServer from './component/tencent_server'
 export default class Pay extends Component {
     render() {
         return (
@@ -44,6 +45,7 @@ export default class Pay extends Component {
                 />
                 <ScrollView>
                     <Panel />
+                    <TencentServer />
                 </ScrollView>
             </View>
         )
@@ -52,6 +54,7 @@ export default class Pay extends Component {
 const { width } = Dimensions.get('window')
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#f5f5f5'
     }
 })
