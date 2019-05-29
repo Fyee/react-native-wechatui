@@ -189,7 +189,7 @@ export default class FindScreen extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f1f1f1'
+        backgroundColor: '#f5f5f5'
     },
     leftIcon: {
         width: 25,

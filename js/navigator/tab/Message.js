@@ -1,11 +1,7 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import MyMessage from '../../pages/msg'
 export default Message = (props) => {
     return (
-        <View
-            style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
-        >
-            <Text>Message</Text>
-        </View>
+        <MyMessage navigation={props.navigation} />
     )
 }
