@@ -53,7 +53,7 @@ export default class AddFriend extends React.Component {
                             />
                         </TouchableOpacity>
                     </View>
-                    <FeatureList />
+                    <FeatureList navigation={this.props.navigation} />
                 </ScrollView>
                 <Modal isVisible={this.state.isVisible} closeModal={this.closeModal} />
             </View>

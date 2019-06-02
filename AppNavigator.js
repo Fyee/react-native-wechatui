@@ -9,6 +9,7 @@ import AddFriend from './js/pages/add_friend'
 import MyInfo from './js/pages/my_info'
 import Pay from './js/pages/pay'
 import Chat from './js/pages/chat'
+import Scan from './js/pages/scan'
 const Tabs = {
     Message: {
         screen: Message,
@@ -84,7 +85,8 @@ const HomeStack = createStackNavigator(
         AddFriend,
         MyInfo,
         Pay,
-        Chat
+        Chat,
+        Scan
     }, {
         defaultNavigationOptions: {
             header: null

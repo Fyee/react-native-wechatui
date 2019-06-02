@@ -5141,6 +5141,12 @@ react-native-animatable@^1.2.4:
   dependencies:
     prop-types "^15.5.10"
 
+"react-native-camera@git+https://git@github.com/react-native-community/react-native-camera.git":
+  version "2.9.0"
+  resolved "git+https://git@github.com/react-native-community/react-native-camera.git#493db170d286aaff81b66ef39c647c3b158378f0"
+  dependencies:
+    prop-types "^15.6.2"
+
 react-native-communications@2.2.1:
   version "2.2.1"
   resolved "http://r.cnpmjs.org/react-native-communications/download/react-native-communications-2.2.1.tgz#7883b56b20a002eeb790c113f8616ea8692ca795"
@@ -5244,6 +5250,19 @@ react-native-parsed-text@^0.0.20:
   dependencies:
     babel-plugin-check-es2015-constants "6.22.0"
     prop-types "^15.5.10"
+
+react-native-permissions@^1.1.1:
+  version "1.1.1"
+  resolved "http://r.cnpmjs.org/react-native-permissions/download/react-native-permissions-1.1.1.tgz#4876004681ff8556454613d85249b01baff9b35b"
+  integrity sha1-SHYARoH/hVZFRhPYUkmwG6/5s1s=
+
+react-native-qrcode-scanner@^1.2.1:
+  version "1.2.1"
+  resolved "http://r.cnpmjs.org/react-native-qrcode-scanner/download/react-native-qrcode-scanner-1.2.1.tgz#aa3949a77f6eee063a3ca25796a1f0ce17f9c4dd"
+  integrity sha1-qjlJp39u7gY6PKJXlqHwzhf5xN0=
+  dependencies:
+    prop-types "^15.5.10"
+    react-native-permissions "^1.1.1"
 
 react-native-ratings@^6.3.0:
   version "6.3.1"

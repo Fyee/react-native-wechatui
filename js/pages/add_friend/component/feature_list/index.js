@@ -69,6 +69,7 @@ export default FeatureList = (props) => {
                     />
                 }
                 containerStyle={styles.container}
+                onPress={() => props.navigation.navigate('Scan')}
             />
             <ListLine />
             <ListItem
